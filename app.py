@@ -10,7 +10,7 @@ from langchain.chains.question_answering import load_qa_chain
 import platform
 
 # App title and presentation
-st.title('Generación Aumentada por Recuperación (RAG) 💬')
+st.title('Pregunta cualquier cosa de la Nintendo WII💬')
 st.write("Versión de Python:", platform.python_version())
 
 # Load and display image
@@ -90,3 +90,11 @@ elif pdf is not None and not ke:
     st.warning("Por favor ingresa tu clave de API de OpenAI para continuar")
 else:
     st.info("Por favor carga un archivo PDF para comenzar")
+
+# Load and display image
+try:
+    image = Image.open('mariokartwii.jpeg')
+    st.image(image, width=350)
+except Exception as e:
+    st.warning(f"No se pudo cargar la imagen: {e}")
+
