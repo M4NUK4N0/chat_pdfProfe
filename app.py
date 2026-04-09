@@ -68,8 +68,8 @@ if pdf is not None and ke:
             docs = knowledge_base.similarity_search(user_question)
             
             # Use a current model instead of deprecated text-davinci-003
-            # Options: "gpt-3.5-turbo-instruct" or "gpt-4-turbo-preview" depending on your API access
-            llm = OpenAI(temperature=0, model_name="gpt-4o")
+            # Options: "gpt-3.5-turbo-instruct" or "gpt-4o" depending on your API access
+            llm = OpenAI(temperature=0, model_name="gpt-4o-mini-2024-07-18")
             
             # Load QA chain
             chain = load_qa_chain(llm, chain_type="stuff")
